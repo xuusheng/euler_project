@@ -1,0 +1,13 @@
+use calc
+
+100!
+
+y paste to *scratch* buffer.
+
+replace-regexp "." to "\&,"
+
+grap to calc
+
+vR+
+
+

@@ -1,0 +1,18 @@
+#first, type the word, then replace space with null. put cursor at the end, obtain the length.
+
+1..9=36
+onetwothreefourfivesixseveneightnine
+
+1..19=106
+onetwothreefourfivesixseveneightnineteneleventwelvethirteenfourteenfifteensixteenseventeeneighteennineteen
+
+20..90=46
+twentythirtyfortyfiftysixtyseventyeightyninety
+
+#then use this formula
+
+1...1000= 1..99 + 100*(1..9)+9*(10*99+ 1..99 + 7)+(1000)= 854+100*36+9*(10*99+854 +7)+11
+
+1..99= 1..19+10*(20..90)+8*(1..9)= 106+10*46+8*36=854
+
+

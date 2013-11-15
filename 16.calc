@@ -1,0 +1,8 @@
+2^1000
+
+in emacs, regexp-replace "\([0-9]\)" with \1, and then
+sourround it with "[" and "]".
+
+copy  it to calc
+
+VR+
