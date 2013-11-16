@@ -1,0 +1,12 @@
+use haskell to compute the abundant numbers.
+use c to compute all the sums of abundant numbers.
+pipe to result to "sort -n" and "uniq".
+grap that data to calc. before that. type "v." in calc.
+that make calc show long vectors in [a,b,c,...,z] mode.
+it takes a long time.
+
+vR+
+
+calc the sum of 1 to 28123
+
+the difference is answer.
