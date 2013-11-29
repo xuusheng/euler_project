@@ -1,0 +1,1 @@
+c=0;for (i=23,100,for(j=1,i, if(binomial(i, j) > 1000000, c++)))
