@@ -10,3 +10,4 @@ euler_project
 
 比如第12题，那个素数表是用Haskell生成的。而程序的主体是C语言写成的。
 
+2014年3月22日凌晨感言，许久没有做euler project了。

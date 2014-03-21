@@ -1,4 +1,5 @@
-此题就是由排序数推序列
+* hand
+** 此题就是由排序数推序列
 
 第一百万项，即排序数为999999之项
 
@@ -11,12 +12,13 @@
 源序列为A={2,6,6,2,5,1,2,1,1,0}
 目标序列B={}
 
-从A序列中取出首项a，从S中取出S[a]置于B序列尾部。
+从A序列中取出首项a，从S中取出S[a]置于B序列尾部（注：取出意味着从原序列
+中移除）。
 不断重复，直到S空为止。
 
 所得B序列即是。
 
-由序列求排列数方法是
+** 由序列求排列数方法是
 
 设源列A为序列，A={a,b,c,d,e,f,...}
 设目标序列B={}
@@ -26,3 +28,68 @@
 
 所得B序列即排序数的阶乘数表示。
 以各项之权重乘之，最后加总即得。
+
+* maxima
+#+BEGIN_SRC maxima
+u:{0,1,2,3,4,5,6,7,8,9};  [00:45]
+p:listify(permutations(u))$
+p[1000000];
+#+END_SRC
+
+* mathematica
+#+BEGIN_SRC mathematica
+u = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+p = Permutations[u];
+p[[1000000]]
+#+END_SRC
+
+* C
+SEPA: Simple, Efficient Permutation Algorithm
+
+
+#+BEGIN_SRC c
+#include <stdio.h>
+#include <string.h>
+
+void swap(char* s, int a, int b)
+{
+  char temp = s[a];
+  s[a] = s[b];
+  s[b] = temp;
+}
+
+int permute(char* str, int len)
+{
+  int key = len-1;
+  int newkey = len-1;
+  while ((key > 0) && (str[key] <= str[key-1]))
+    key--;
+  key--;
+  if (key < 0)
+    return 0;
+  newkey = len-1;
+  while ((newkey > key) && (str[newkey] <= str[key])){
+    newkey--;
+  }
+  swap(str,key,newkey);
+  len--;
+  key++;
+  while(len>key){
+    swap(str,len,key);
+    key++;
+    len--;
+  }
+  return 1;
+}
+
+int main(void)
+{
+  char st[] = {"123456789ab"};
+  int a = 0;
+  do {
+       a++;
+  } while(permute(st,strlen(st)));
+  printf("%d\n", a);
+  return 0;
+}
+#+END_SRC

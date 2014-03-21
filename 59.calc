@@ -1,0 +1,35 @@
+use calc and haskell. mainly calc.
+
+let a = [the long files]
+
+f a b = fst a `compare` fst b
+sortBy f $ map (\x -> (length x, head x)) $group $ sort a
+
+the result is:
+[(1,40),(1,41),(1,48),(1,52),(1,60),(1,64),(1,69),(1,78),(1,81),(1,84),(1,89),(1,91),(1,92),(1,93),(1,94),(2,33),(2,37),(2,38),(2,39),(2,44),(2,56),(2,65),(2,67),(2,83),(3,35),(3,87),(4,30),(4,31),(4,32),(4,45),(4,59),(4,74),(4,86),(5,4),(5,72),(5,75),(5,85),(6,25),(6,26),(9,17),(9,24),(10,18),(11,29),(11,73),(15,21),(17,23),(21,5),(21,27),(21,28),(22,20),(22,22),(24,13),(26,15),(31,12),(34,8),(35,19),(37,3),(38,14),(38,16),(41,7),(41,9),(49,0),(49,6),(54,11),(60,2),(60,10),(63,1),(70,71),(77,68),(86,79)]
+
+the most common letter must be " ". so 79, 68, 71 are all " " xor a letter.
+
+try to prove this.
+
+map (`mod` 3) $elemIndices 79
+    produces all 1 exect for the first one. so the letter is "o"(79 xor 32)
+map (`mod` 3) $elemIndices 68
+    produces all 2, so the letter is "d" (68 xor 32)
+map (`mod` 3) $elemIndices 71
+    produces all 0, so the letter is "g" (71 xor 32)
+
+so the key is "god"
+
+take 1201 $concat $repeat "god"
+grab the result to calc.
+
+grab the ciphers to calc.
+
+V M b x
+d ""
+will show the original text.
+
+u +
+
+will give the sum of the ascii values.
