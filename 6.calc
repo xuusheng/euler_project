@@ -1,0 +1,3 @@
+vx 100 RET VR+ RET *  --square of the sum
+vx 100 RET 2 VM ^ VR+ --sum of the square
+-    --difference
