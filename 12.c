@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
      	  if (r > 500)
      	       break;
      }
-     printf("%d\n", i);
+     printf("%d\n", i*(i-1)/2);
 
      return 0;
 }

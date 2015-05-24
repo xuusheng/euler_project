@@ -1,5 +1,5 @@
 /* very dirty code. */
-/* because the length is  [41,79], P is used to justify if a number is a prime. */
+/* because the length is  [41,79], P is used to judge if a number is a prime. */
 /* A is used to build P and iterate b. */
 
 /* if i can prove that 'a' is negative, then the code will be more elegant */

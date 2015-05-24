@@ -10,3 +10,10 @@ n^2-2*(n-1)
 n^2-3*(n-1)
 
 answer= Sigma(4*n^2-6*(n-1), n=[3,1001]) + 1
+
+
+vx500 RET
+2*1+ 				--build 3,5,7..1001 sequence
+VM' 4*$^2-6*($-1) RET		--map f(x)=4*x^2-6*(x-1)
+VR+				--Sum
+1+				--Result

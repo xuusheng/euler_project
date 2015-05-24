@@ -1,7 +1,7 @@
 /* 如果某月首日的星期数与下另一个月首日的星期数相同，则称两者为同星月， */
 /* 本题的思路是以1901年9月为起点（因此月首日为星期日）， */
 /* 不断寻找它的下一个同星月。直到年份超出2001为止。 */
-/* 为此，先构造一个数组，这个数组的个标保存年月信息，而其值为它的下一个同星年月。 */
+/* 为此，先构造一个数组，这个数组的下标保存年月信息，而其值为它的下一个同星年月。 */
 
 /* 因为从1991年到2001年，均满足四年一闰之特点。 */
 /* 所以，年份信息只需以0，1，2，3四个数字即可代表。 */
@@ -29,7 +29,7 @@
 /* leapList = zip month $map (nextSun list2) [0..11]     -- 闰年各月的下一同星月表 */
 
 
-/* 然后利用emacsemacs的replace-regexp 的arithmatic功能，构造3个平年表及一个闰年表。 */
+/* 然后利用emacs的replace-regexp 的arithmatic功能，构造3个平年表及一个闰年表。 */
 
 /* replace-regexp replace "[0-9]+" with \,(+ 100 \#&) */
 
@@ -37,7 +37,7 @@
 
 
 #include <stdio.h>
-int A[312];
+int A[313];
 
 
 int main(int argc, char *argv[])
@@ -68,7 +68,7 @@ while (year < 2001)
      count++;
 }
 
-//printf("%d,%d,%d\n", count,year,a);
+printf("count:%d,year:%d,a:%d\n", count,year,a);
 
      
      return 0;

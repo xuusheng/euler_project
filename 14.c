@@ -14,7 +14,7 @@
 int64_t max;
 
 int64_t collatz(int64_t);
-int64_t main(int64_t argc, char *argv[])
+int main(int argc, char *argv[])
 {
      int64_t i;
      int64_t r, result = 0;

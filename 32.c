@@ -1,6 +1,11 @@
 /* 先求排列数，再按144 234两种方式切分 */
 /* 验证两边是否相等。 */
+
 /* 最后 sort |uniq|awk 'n+=$1;END {print n}' 得出结果 */
+/* OR */
+/* \C-xg grab the result to calc */
+/* v+ to remove the duplicates */
+/* VR+ to sum */
 
 #include <stdio.h>
 #include <stdlib.h>

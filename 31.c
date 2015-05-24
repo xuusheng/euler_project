@@ -1,3 +1,4 @@
+/* the result should be add with 1, because one 200 is also a valid way */
 #include <stdio.h>
 int main(int argc, char *argv[])
 {
