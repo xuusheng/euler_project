@@ -1,0 +1,11 @@
+1. read the file into an emacs buffer
+2. \Cx * g --grap the words to calc
+3. v.	   --display long list as compact mode
+4. 64-	   --cnvert a to 1, b to 2, etc
+5. VMVR+   --compute each word's value
+6. vx19 RET RET 1+*2/ --build triangle list.
+7. sta RET --store the triangle list as variable `a'
+8. VM'1-vcard(vdiff($,a)) RET
+           -- if the value is in triangle list, it is converted to 1,
+	   -- or else converted to 0.
+9. VR+	   -- result, how many triangle value.
