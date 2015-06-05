@@ -28,5 +28,5 @@ nonlychel x n = palindrome x || (nonlychel (nextIt x) (n - 1))
 lychel:: Integer -> Bool
 lychel x = not (nonlychel (nextIt x) 50)
 
-main = do
-  print $ filter (lychel) [1..9999]
+lychels = filter (lychel) [1..9999]
+result = length lychels

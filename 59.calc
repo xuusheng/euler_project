@@ -24,6 +24,12 @@ so the key is "god"
 take 1201 $concat $repeat "god"
 grab the result to calc.
 
+or use calc to produce "godgod..."
+"god" RET
+vb 400 RET (you may type M to increase the recursive limit)
+VR| (flatten the list, thus produce a 1200 long list)
+103| (add "g" to the tail of the list)
+
 grab the ciphers to calc.
 
 V M b x

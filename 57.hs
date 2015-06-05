@@ -7,5 +7,4 @@ q = 2:5:zipWith (\x y -> x + 2*y) q (tail q)
 
 n = zipWith (\x y-> (length (digits x)) - (length (digits y))) p q
 
-main = do
-  print $ sum $ take 1000 n
+result=sum $ take 1000 n

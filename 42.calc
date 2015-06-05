@@ -9,3 +9,14 @@
            -- if the value is in triangle list, it is converted to 1,
 	   -- or else converted to 0.
 9. VR+	   -- result, how many triangle value.
+
+
+or
+6. VM'vcard(vfloor((sqrt(1+8*$)-1)/2)) RET
+-- because the inverse function of n*(n-1)/2 is (sqrt(1+8*n)-1)/2, so
+--if n is triangle number, then (sqrt(1+8*n)-1)/2 is an integer. use
+--this property to decide whether a number is a triangle number.
+-- VF will filter out nonintger values. V# calculate the cardinality
+--of a set.
+
+7. VR+

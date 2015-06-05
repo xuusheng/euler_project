@@ -26,4 +26,4 @@ pp = map (\x->4*x-3)
 
 rr = zipWith (/) (ll [1..]) (pp [1..])
 
-
+result = 2 * (length $ takeWhile (>0.1) $ drop 1 rr) + 3

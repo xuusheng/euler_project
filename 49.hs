@@ -18,5 +18,4 @@ listeq (x:xs) y = (x `elem` y) && (listeq xs y)
 digits 0 = []
 digits x = x `mod` 10 : digits (x `div` 10)
 
-mail = do
-  print $ filter ((\x -> ((all (isprime) x) && (all (listeq (digits (head x))) (map (digits) x)))) . take 3 . iterate (+ 3330)) [2000..4000]
+result=filter ((\x -> ((all (isprime) x) && (all (listeq (digits (head x))) (map (digits) x)))) . take 3 . iterate (+ 3330)) [2000..4000]
