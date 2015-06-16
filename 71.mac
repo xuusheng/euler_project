@@ -1,0 +1,10 @@
+/* very easy! */
+euler71(n):=block(
+  [e,mine:1,result],
+  for i:2995 thru n do
+  ( if not(mod(i,7)=0) then
+    (e:3/7-floor(3*i/7)/i,
+      if e<mine then (mine:e, r:i))),r)$
+
+r:euler71(1000000);
+result:floor(r*3/7);

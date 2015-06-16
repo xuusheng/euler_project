@@ -1,0 +1,42 @@
+isqr(n) := isqrt(n)*isqrt(n) = n;
+cf_sqrt(d) := block(
+     [a: 0, b: 1, r: isqrt(d), v: [ ], n],
+        if r * r = d then return([r]),
+   do (
+      n: quotient(a + r, b),
+      v: endcons(n, v),
+      a: b * n - a,
+      b: quotient(d - a * a, b),
+      if b = 1 then return(endcons(a + r, v))
+   )
+)$
+
+cf_sqrt2(n):=block(
+  if mod(length(cf_sqrt(n)),2)=1 then rest(cf_sqrt(n),-1)
+  else cf_sqrt(n))$
+
+euler66(n):=num(rreduce(lambda([x,y], x+1/y), cf_sqrt2(n)))$
+euler663(n):=block(
+  [num1:0,num2:1,den1:1,den2:0,v:cf_sqrt2(n),a,b,t],
+  do(
+    if v=[] then return(0),
+    a:first(v),
+    b:second(v),
+    v:rest(v,2),
+    t:num2,
+    num2:num2*a+num1,
+    num1:t,
+    t:num2,
+    num2:num2*b+num1,
+    num1:t,
+    t:den2,
+    den2:den2*a+den1,
+    den1:t,
+    t:den2,
+    den2:den2*b+den1,
+    den1:t,
+    if num2*num2-n*den2*den2=1 then return(num2)))$
+
+euler662(n):=block(r:0, for i:1 thru 100 do (if isqr(i*i*n+1) then return(r:isqrt(i*i*n+1))), return(r))$
+
+a:sublist(makelist(x,x,1,1000), lambda([x], not(isqr(x))))$

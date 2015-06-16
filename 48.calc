@@ -1,0 +1,6 @@
+v x 1000 <RET>
+<RET>
+V M ' $ mod 10000000000 <RET>
+<TAB>
+V M ^
+V R +

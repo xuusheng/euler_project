@@ -1,0 +1,22 @@
+/* after some analysis, the number should not be divisable by small primes like 2, 3, 5, 7. and the number should be at the later part of [1..10000000) so, i try from 8000000*/
+
+digits(n):=block(
+  if n=0 then return([])
+  else
+  endcons(mod(n,10), digits(quotient(n,10))))$
+
+euler70(n):=block(
+  [m:10, t, result:0],
+  for i:8000000 thru n
+  do (
+    if mod(i,2)=0 then
+    continue,
+    if mod(i,3)=0 then
+    continue,
+    if mod(i,5)=0 then
+    continue,
+    t:totient(i),
+    if sort(digits(i))=sort(digits(t))
+    then if i/t<m
+    then (m:i/t,result:i)),
+  result)$

@@ -1,0 +1,1 @@
+euler72(n):=lsum(totient(i),i,makelist(x,x,2,n))$

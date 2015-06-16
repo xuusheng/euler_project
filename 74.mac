@@ -1,0 +1,29 @@
+/* there are 42 below 10000*/
+/* there are none between 10001 and 100000 */
+digits(n):=block(
+  if n=0 then return([])
+  else
+  endcons(mod(n,10), digits(quotient(n,10))))$
+
+e74(n):=lsum(x!,x,digits(n))$
+
+eu74(n):=block(
+  if n=169 then return(3),
+  if n=363601 then return(3),
+  if n=1454 then return(3),
+  if n=871 then return(2),
+  if n=45361 then return(2),
+  if n=872 then return(2),
+  if n=45362 then return(2),
+  if n=145 then return(1),
+  if n=2 then return(1),
+  if n=1 then return(1),
+  if n=40585 then return(1),
+  eu74(e74(n))+1)$
+
+
+eul74(n):=block(
+  [v:[]],
+  for i:100001 thru n
+  do (if eu74(i)=60 then v:endcons(i,v)), v)$
+

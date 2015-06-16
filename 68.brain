@@ -1,0 +1,23 @@
+quite simple!
+
+1. 10 must be on the external cicle, so that there is 16 digits.
+2. 10 must be with 1. 9 must be with 1.
+   and the least sum is 14 (2*sum([1..5])+[6..10])/5
+   start with 10. get the following solution:
+   10 3 1
+   9  1 4
+   8  4 2
+   7  2 5
+   6  5 3
+
+3. the above solution must be the answer.
+
+   because the first digit must not be larger than 6.
+   the second digit must not be larger than 5.
+   when the first two digits are certain, third digit is certain.
+   next 6 5 3, i try 9 .. 7, no solution is found. so 10 is the next digit.
+   and the following digits are certain.
+
+4. so the answer is 6531031914842725
+
+1 7 11 13 17 19 23 29

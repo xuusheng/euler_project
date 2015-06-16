@@ -1,0 +1,19 @@
+/* the cf_sqrt part is borrowed from internet.  i find a bug with the
+ cf routine in maxima.  the i search the internet, only to find that
+ in 2012, someone has reported this bug, and he wass also doing euler
+ 64! */
+ 
+cf_sqrt(d) := block(
+     [a: 0, b: 1, r: isqrt(d), v: [ ], n],
+        if r * r = d then return([r]),
+   do (
+      n: quotient(a + r, b),
+      v: endcons(n, v),
+      a: b * n - a,
+      b: quotient(d - a * a, b),
+      if b = 1 then return(endcons(a + r, v))
+   )
+)$
+
+a:map(length, map(cf_sqrt, makelist(x,x,1,10000)))$
+result:map(length, sublist(a, evenp));
